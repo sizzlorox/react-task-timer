@@ -1,0 +1,54 @@
+@import 'meyer-reset';
+
+$main-background: #4B4648;
+$main-background1: #574C51;
+$main-background2: #AF9CA6;
+$main-background3: #634E59;
+$main-background4: #6D4C5D;
+$secondary-background: #23424E;
+$secondary-background1: #0B5E7E;
+$secondary-background2: #195167;
+$secondary-background3: #0C3E51;
+$secondary-background4: #033A4F;
+$third-background: #2F2C20;
+$third-background1: #3C361F;
+$third-background2: #363220;
+$third-background3: #2A271A;
+$third-background4: #272416;
+$fourth-background: #050604;
+$fourth-background1: #5F6651;
+$fourth-background2: #151613;
+$fourth-background3: #2B3619;
+$fourth-background4: #171B0F;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#app {
+  @import './components/timer/timer.scss';
+  height: 100%;
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: $main-background;
+
+    .content {
+      margin: 0 auto;
+      height: 75%;
+      width: 75%;
+      background-color: $secondary-background;
+      border-radius: 5%;
+    }
+  }
+}
