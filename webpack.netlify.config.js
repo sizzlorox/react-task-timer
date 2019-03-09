@@ -3,8 +3,7 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
@@ -78,19 +77,13 @@ module.exports = {
 
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          warnings: false,
+      new TerserPlugin({
+        terserOptions: {
           output: {
             comments: false,
-            beautify: false
           },
-          compress: true,
-          keep_classnames: false,
-          keep_fnames: false
         },
-        sourceMap: false
       })
-    ]
-  }
+    ],
+  },
 };
