@@ -34,6 +34,7 @@ body {
 
 #app {
   @import './components/timer/timer.scss';
+  @import './components/task-table/tasktable.scss';
   height: 100%;
 
   .app-container {
@@ -45,10 +46,9 @@ body {
 
     .content {
       margin: 0 auto;
-      height: 75%;
       width: 75%;
       background-color: $secondary-background;
-      border-radius: 5%;
+      border-radius: 1.5em;
     }
   }
 }

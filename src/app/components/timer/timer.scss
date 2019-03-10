@@ -4,13 +4,26 @@
   background-color: $secondary-background1;
   .controls-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
+    background-color: $main-background2;
+    .controls {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+    }
+    .actions {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+    }
   }
   .display-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
+    background-color: $main-background1;
     .clock {
       text-align: center;
     }

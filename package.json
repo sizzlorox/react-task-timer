@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/sizzlorox/react-task-timer#readme",
   "dependencies": {
+    "immer": "^2.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },

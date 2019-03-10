@@ -1,0 +1,34 @@
+.table-container {
+  overflow: auto;
+  .task-table {
+    margin: 15px;
+    border: 1px solid black;
+    background-color: $secondary-background1;
+    tr {
+      border: 1px solid black;
+      &:hover {
+        td {
+          background-color: $main-background2;
+        }
+      }
+      &:nth-child(even) {
+        td {
+          background-color: $secondary-background3;
+        }
+        &:hover {
+          td {
+            background-color: $main-background2;
+          }
+        }
+      }
+    }
+    th {
+      padding: 10px;
+    }
+    td {
+      background-color: $secondary-background2;
+      border: 1px solid black;
+      padding: 5px;
+    }
+  }
+}
