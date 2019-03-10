@@ -11,6 +11,7 @@ const tasksReducer = produce((draft, action) => {
       const taskIndex = localStorageTasks.find(task => task === action.payload);
       if (taskIndex !== -1) {
         localStorageTasks.splice(taskIndex, 1);
+        localStorage.setItem('tasks', JSON.stringify(localStorageTasks));
       }
       return localStorageTasks;
     case 'CLEAR':
