@@ -1,5 +1,5 @@
 import produce from 'immer';
-
+console.log(localStorage.getItem('tasks'));
 export const initialState = localStorage.getItem('tasks') === null ? [] : JSON.parse(localStorage.getItem('tasks'));
 
 const tasksReducer = produce((draft, action) => {
@@ -15,7 +15,7 @@ const tasksReducer = produce((draft, action) => {
       }
       return localStorageTasks;
     case 'CLEAR':
-      localStorage.setItem('tasks', []);
+      localStorage.setItem('tasks', JSON.stringify([]));
       return [];
   }
 });
