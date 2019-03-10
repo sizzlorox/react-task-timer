@@ -1,5 +1,4 @@
 import produce from 'immer';
-console.log(localStorage.getItem('tasks'));
 export const initialState = localStorage.getItem('tasks') === null ? [] : JSON.parse(localStorage.getItem('tasks'));
 
 const tasksReducer = produce((draft, action) => {
