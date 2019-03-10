@@ -1,11 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import TasksContext from '../../stores/tasks/tasksContext';
 
 const TaskTable = ({ tasks }) => {
   const dispatch = useContext(TasksContext);
+  const [showIndex, setShowIndex] = useState();
+
   const _clear = () => {
     dispatch({
       type: 'CLEAR'
+    });
+  };
+
+  const _show = (index) => {
+    if (showIndex !== index) {
+      return setShowIndex(index);
+    }
+
+    return setShowIndex();
+  };
+
+  const _rename = (task) => {
+    dispatch({
+      type: 'RENAME',
+    });
+  };
+
+  const _delete = (task) => {
+    dispatch({
+      type: 'REMOVE',
+      task,
     });
   };
 
@@ -25,7 +48,13 @@ const TaskTable = ({ tasks }) => {
                 <td>{task.name}</td>
                 <td>{task.time}</td>
                 <td>{task.date}</td>
-                <td>More</td>
+                <td onClick={() => _show(index)} onMouseLeave={() => setShowIndex()}>
+                  More
+                  <div className={`dropdown-content ${showIndex === index ? 'show' : ''}`} >
+                    <a onClick={() => _rename(task)}>Rename</a>
+                    <a onClick={() => _delete(task)}>Delete</a>
+                  </div>
+                </td>
               </tr>
             )) : null
           }
